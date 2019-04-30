@@ -1,0 +1,225 @@
+﻿@charset "utf-8";
+.corb{
+    color:#0995ED !important;
+}
+.font-18{
+    font-size: 18px;
+}
+.font-14{
+    font-size: 14px;
+}
+.img-logo img{
+    height: 42px;
+}
+/*顶部菜单*/
+.menu-main-panel{
+    position: fixed;
+    left: 220px;
+    padding:0 20px;
+    height: 40px;
+    line-height: 40px;
+    top:50px;
+    z-index: 998;
+    right: 0;
+    transition: all .3s;
+    -webkit-transition: all .3s;
+    box-sizing: border-box;
+}
+@media screen and (max-width: 992px){
+    .menu-main-panel{
+        left:0;
+    }
+}
+.inner-menu-panel{
+    width:100%;
+    height: 100%;
+    border-radius: 4px;
+    -wekit-border-radius: 4px;
+    background:#4B8CEE;
+    box-sizing: border-box;
+    padding:0 8px;
+}
+.inner-menu-list {
+    width: 90px;
+    height: 40px;
+    line-height: 40px;
+    overflow: hidden;
+    float: left;
+}
+.inner-menu-list.on a,.inner-menu-list a:hover{
+    color:#fff;
+}
+.inner-menu-list a{
+    width:100%;
+    height: 100%;
+    display: block;
+    color:#92BEFC;
+    font-size: 14px;
+    text-align: center;
+}
+.page-tab-bar{
+    top:90px;
+    padding: 0 98px 0 50px;
+}
+.layui-layout-admin .layui-body.main-body{
+    top:130px;
+}
+/*左侧菜单*/
+.layadmin-setTheme-side, .layui-side-menu.left-side-wrap{
+    background:#4B8CEE;
+}
+.layui-side-menu, .layadmin-pagetabs .layui-tab-title li:after, .layadmin-pagetabs .layui-tab-title li.layui-this:after, .layui-layer-admin .layui-layer-title, .layadmin-side-shrink .layui-side-menu .layui-nav>.layui-nav-item>.layui-nav-child {
+    background-color: #4B8CEE !important;
+}
+.layui-nav-itemed>.layui-nav-child{
+    background:none !important;
+}
+.layui-nav-tree .layui-this, .layui-nav-tree .layui-this>a, .layui-nav-tree .layui-nav-child dd.layui-this, .layui-nav-tree .layui-nav-child dd.layui-this a{
+    background-color:rgba(0,0,0,0.7) !important;
+}
+.layui-side-menu .layui-nav .layui-nav-item>a{
+    border-bottom: solid 2px #3DB6F9;
+}
+.hide {
+    display: none !important;
+}
+.user-tximgbox {
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1002;
+    width: 220px;
+    height: 120px;
+    padding: 0 15px;
+    box-sizing: border-box;
+    overflow: hidden;
+    font-weight: 300;
+    background:#2269D1;
+    display: -webkit-box; /* Chrome 4+, Safari 3.1, iOS Safari 3.2+ */
+    display: -moz-box; /* Firefox 17- */
+    display: -webkit-flex; /* Chrome 21+, Safari 6.1+, iOS Safari 7+, Opera 15/16 */
+    display: -moz-flex; /* Firefox 18+ */
+    display: -ms-flexbox; /* IE 10 */
+    display: flex; /* Chrome 29+, Firefox 22+, IE 11+, Opera 12.1/17/18, Android 4.4+ */
+    align-items: center;
+}
+.layui-side-menu .layui-nav{
+    margin-top: 120px;
+}
+.user-imgbox-left{
+    width: 57px;
+    height: 57px;
+    overflow: hidden;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+.user-imgbox-left img{
+    width: 100%;
+}
+.user-infor-right{
+    max-width: 110px;
+}
+.user-infor-right p{
+    height: 24px;
+    line-height: 24px;
+    overflow: hidden;
+    text-overflow:ellipsis;
+    white-space:nowrap;
+}
+/*顶部*/
+.layui-layout-admin .layui-header{
+    background:none;
+}
+.layadmin-pagetabs{
+    background:none;
+    box-shadow:none;
+}
+.layadmin-pagetabs .layui-tab-title li {
+    min-width: 0;
+    line-height: 28px;
+    max-width: 160px;
+    margin-top: 6px;
+    text-overflow: ellipsis;
+    padding-right: 40px;
+    overflow: hidden;
+    vertical-align: middle;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    background:rgba(255,255,255,0.52);
+    color:#B5B5B5;
+    margin-right: 10px;
+}
+.layadmin-pagetabs .layui-tab-title li.layui-this{
+    background:#fff;
+    color: #0C96F3;
+    box-shadow: 0 1px 2px 0 rgba(0,0,0,.1);
+}
+.layadmin-pagetabs .layui-tab-title li.layui-this:after {
+    display: none;
+}
+.layui-tab-title li.layui-this .layui-tab-close{
+    color: #0C96F3;
+}
+.layui-tab-title li.layui-this .layui-tab-close:hover{
+    color:#fff;
+}
+.layadmin-pagetabs .layui-icon-prev.tab-jt-left{
+    left:7px;
+    color: #999;
+}
+.layadmin-pagetabs .layui-icon-next.tab-jt-right{
+    color: #999;
+    right: 60px;
+}
+.layadmin-pagetabs .layui-icon-down.tab-jt-down{
+    right: 20px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,255 @@
+﻿@charset "utf-8";
+/*会议管理*/
+.box-bar {
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -moz-box-orient: horizontal;
+    -moz-box-direction: normal;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+
+.box-bar-list {
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    -webkit-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    box-sizing: border-box;
+    align-self: center;
+}
+
+.cell {
+    -webkit-box-flex: 0;
+    -webkit-flex: none;
+    -ms-flex: none;
+    flex: none;
+    width: auto;
+    align-self: center;
+}
+
+.pic-banner {
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    background-size: cover;
+}
+
+.pic-banner img {
+    width: 100%;
+}
+
+.foot-bar {
+    text-align: center;
+    color: #A5A5A5;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.card-panel {
+    border-top: 4px solid #4B8CEE;
+}
+
+a.index-more {
+    font-size: 12px;
+    color: #FF5050;
+}
+
+a.index-more:hover {
+    color: #FF7300;
+    cursor: pointer;
+}
+
+.slide-wrap {
+    position: relative;
+}
+
+.slide-infor {
+    width: 100%;
+    height: 40px;
+    line-height: 40px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    color: #fff;
+    padding: 0 20px;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: rgba(34, 105, 209, 0.8);
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    padding-right: 120px;
+}
+
+.layui-carousel-ind {
+    text-align: right;
+    padding-right: 20px;
+}
+
+.layui-carousel-ind ul {
+    background: none;
+}
+
+.layui-carousel-ind li.layui-this {
+    background: #0C96F3;
+}
+
+.layui-carousel-ind li {
+    width: 14px;
+    height: 4px;
+    background: #fff;
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    border-radius: 0;
+}
+
+.layui-carousel-ind {
+    top: -28px;
+}
+
+a.list-bar {
+    color: #666;
+    height: 35px;
+    line-height: 35px;
+}
+
+a.list-bar:hover, a.task-list-bar:hover {
+    color: #FF7300;
+}
+
+a.list-bar .box-bar-list, a.task-list-bar .box-bar-list {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    margin-right: 10px;
+}
+
+.hd-header {
+    font-size: 16px;
+    color: #000;
+}
+
+.message-icon {
+    margin-right: 10px;
+}
+
+a.task-list-bar {
+    color: #666;
+    height: 42px;
+    line-height: 42px;
+    border-bottom: dotted 1px #EEEFF3;
+}
+
+.mar-r {
+    margin-right: 10px;
+}
+
+.affairs-hd {
+    border-bottom: 3px #D52424 solid;
+    color: #D52424;
+}
+
+li.menu-list {
+    width: 25%;
+    padding: 5px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    float: left;
+}
+
+.menu-list-a {
+    display: block;
+    width: 100%;
+    /*height: 100%;*/
+}
+
+.menu-view {
+    min-height: 210px;
+    height: auto;
+    overflow: hidden;
+    padding-top: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.menu-view.top {
+    min-height: auto !important;
+}
+
+.menu-view.middle {
+    min-height: 210px !important;
+}
+
+.menu-view.bottom {
+    min-height: 150px !important;
+}
+
+.menu-imgbox img {
+    display: block;
+    margin: 0 auto;
+}
+
+.menu-infor {
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.system-icon {
+    position: relative;
+    width: 3px;
+    height: 36px;
+}
+
+.system-icon:after {
+    content: "";
+    position: absolute;
+    width: 3px;
+    height: 20px;
+    background: #8F83F2;
+    left: -15px;
+    top: 8px;
+}
+
+.system-icon.bgg:after {
+    background: #8EC864;
+}
+
+.system-body {
+    min-height: 199px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

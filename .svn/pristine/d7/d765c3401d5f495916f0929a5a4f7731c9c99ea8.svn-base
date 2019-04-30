@@ -1,0 +1,61 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/task
+   		http://www.springframework.org/schema/task/spring-task-4.0.xsd
+		http://code.alibabatech.com/schema/dubbo        
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+
+
+    <!-- Dubbo消费方 -->
+    <!-- 1：名称  计算机 区别 唯一 -->
+    <dubbo:application name="controller"/>
+    <!--<dubbo:registry address="N/A" check="false"/>
+    <dubbo:reference interface="com.test.core.service.TestBookService" id="testBookService" url="dubbo://127.0.0.1:20880"/>-->
+    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <!--  生成远程服务代理，可以像使用本地bean一样使用demoService   -->
+    <dubbo:reference id="listenerService" interface="com.oa.core.service.ListenerService"/>
+    <dubbo:reference id="dictionaryService" interface="com.oa.core.service.dd.DictionaryService"/>
+    <dubbo:reference id="userManagerService" interface="com.oa.core.service.user.UserManagerService"/>
+    <dubbo:reference id="userComputerService" interface="com.oa.core.service.user.UserComputerService" />
+    <dubbo:reference id="tableService" interface="com.oa.core.service.util.TableService"/>
+    <dubbo:reference id="formCustomMadeService" interface="com.oa.core.service.system.FormCustomMadeService"/>
+    <dubbo:reference id="myUrlRegistService" interface="com.oa.core.service.system.MyUrlRegistService"/>
+    <dubbo:reference id="roleDefinesService" interface="com.oa.core.service.system.RoleDefinesService"/>
+    <dubbo:reference id="accessRightsService" interface="com.oa.core.service.system.AccessRightsService"/>
+    <dubbo:reference id="taskSenderService" interface="com.oa.core.service.system.TaskSenderService"/>
+    <dubbo:reference id="warningService" interface="com.oa.core.service.system.WarningService"/>
+    <dubbo:reference id="workFlowDefineService" interface="com.oa.core.service.work.WorkFlowDefineService"/>
+    <dubbo:reference id="workFlowNodeService" interface="com.oa.core.service.work.WorkFlowNodeService"/>
+    <dubbo:reference id="workFlowLineService" interface="com.oa.core.service.work.WorkFlowLineService"/>
+    <dubbo:reference id="workFlowProcService" interface="com.oa.core.service.work.WorkFlowProcService"/>
+    <dubbo:reference id="workFlowLogService" interface="com.oa.core.service.work.WorkFlowLogService"/>
+    <dubbo:reference id="wkflwNodeActorService" interface="com.oa.core.service.work.WkflwNodeActorService"/>
+    <dubbo:reference id="wkflwFieldMapService" interface="com.oa.core.service.work.WkflwFieldMapService"/>
+    <dubbo:reference id="employeesService" interface="com.oa.core.service.module.EmployeesService"/>
+    <dubbo:reference id="departmentService" interface="com.oa.core.service.module.DepartmentService"/>
+    <dubbo:reference id="messageService" interface="com.oa.core.service.module.MessageService"/>
+    <dubbo:reference id="updatePackageService" interface="com.oa.core.service.module.UpdatePackageService"/>
+    <dubbo:reference id="filepermissionService" interface="com.oa.core.service.module.FilepermissionService"/>
+    <dubbo:reference id="filetypeService" interface="com.oa.core.service.module.FiletypeService"/>
+    <dubbo:reference id="fileService" interface="com.oa.core.service.module.FileService"/>
+    <dubbo:reference id="festivalService" interface="com.oa.core.service.module.FestivalService"/>
+    <dubbo:reference id="scheduleService" interface="com.oa.core.service.module.ScheduleService"/>
+    <dubbo:reference id="joblogService" interface="com.oa.core.service.module.JoblogService"/>
+    <!-- 全局设置 -->
+    <dubbo:consumer timeout="600000" check="false"/>
+</beans>

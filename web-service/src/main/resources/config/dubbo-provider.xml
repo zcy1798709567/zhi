@@ -1,0 +1,118 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:mvc="http://www.springframework.org/schema/mvc"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xmlns:task="http://www.springframework.org/schema/task"
+	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+		http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+		http://www.springframework.org/schema/mvc
+		http://www.springframework.org/schema/mvc/spring-mvc-4.0.xsd
+		http://www.springframework.org/schema/context
+		http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/aop
+		http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/tx
+		http://www.springframework.org/schema/tx/spring-tx-4.0.xsd
+		http://www.springframework.org/schema/task
+   		http://www.springframework.org/schema/task/spring-task-4.0.xsd
+		http://code.alibabatech.com/schema/dubbo        
+		http://code.alibabatech.com/schema/dubbo/dubbo.xsd">
+		
+	<!-- Dubbo提供方 -->
+	<!-- 1：名称  计算机 区别 唯一 -->
+	<dubbo:application name="service"/>
+	<!-- 2：设置注册中心  地址  zookeeper在哪里  redis ... -->
+<!-- 	<dubbo:registry address="192.168.0.150:2181,192.168.0.151:2181,192.168.0.152:2181" protocol="zookeeper"/> -->
+<!-- 	<dubbo:registry address="192.168.0.150:2181" protocol="zookeeper"/> -->
+     <!-- 设置不注册 -->
+	<dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+	<!-- 3：dubbo://127.0.0.1:20880  默认  设置提供服务的端口号 -->
+	<dubbo:protocol port="20880" name="dubbo"/>
+	
+	<!-- 4： 暴露实现类-->
+	<dubbo:service interface="com.oa.core.service.ListenerService" ref="listenerService"/>
+	<bean id="listenerService" class="com.oa.core.service.ListenerServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.dd.DictionaryService" ref="dictionaryService"/>
+	<bean id="dictionaryService" class="com.oa.core.service.dd.DictionaryServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.user.UserManagerService" ref="userManagerService"/>
+	<bean id="userManagerService" class="com.oa.core.service.user.UserManagerServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.user.UserComputerService" ref="userComputerService"/>
+	<bean id="userComputerService" class="com.oa.core.service.user.UserComputerServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.util.TableService" ref="tableService"/>
+	<bean id="tableService" class="com.oa.core.service.util.TableServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.system.FormCustomMadeService" ref="formCustomMadeService"/>
+	<bean id="formCustomMadeService" class="com.oa.core.service.system.FormCustomMadeServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.system.MyUrlRegistService" ref="myUrlRegistService"/>
+	<bean id="myUrlRegistService" class="com.oa.core.service.system.MyUrlRegistServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.system.RoleDefinesService" ref="roleDefinesService"/>
+	<bean id="roleDefinesService" class="com.oa.core.service.system.RoleDefinesServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.system.AccessRightsService" ref="accessRightsService"/>
+	<bean id="accessRightsService" class="com.oa.core.service.system.AccessRightsServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.system.TaskSenderService" ref="taskSenderService"/>
+	<bean id="taskSenderService" class="com.oa.core.service.system.TaskSenderServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.system.WarningService" ref="warningService"/>
+	<bean id="warningService" class="com.oa.core.service.system.WarningServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.work.WorkFlowDefineService" ref="workFlowDefineService"/>
+	<bean id="workFlowDefineService" class="com.oa.core.service.work.WorkFlowDefineServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.work.WorkFlowNodeService" ref="workFlowNodeService"/>
+	<bean id="workFlowNodeService" class="com.oa.core.service.work.WorkFlowNodeServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.work.WorkFlowLineService" ref="workFlowLineService"/>
+	<bean id="workFlowLineService" class="com.oa.core.service.work.WorkFlowLineServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.work.WorkFlowProcService" ref="workFlowProcService"/>
+	<bean id="workFlowProcService" class="com.oa.core.service.work.WorkFlowProcServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.work.WorkFlowLogService" ref="workFlowLogService"/>
+	<bean id="workFlowLogService" class="com.oa.core.service.work.WorkFlowLogServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.work.WkflwNodeActorService" ref="wkflwNodeActorService"/>
+	<bean id="wkflwNodeActorService" class="com.oa.core.service.work.WkflwNodeActorServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.work.WkflwFieldMapService" ref="wkflwFieldMapService"/>
+	<bean id="wkflwFieldMapService" class="com.oa.core.service.work.WkflwFieldMapServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.EmployeesService" ref="employeesService"/>
+	<bean id="employeesService" class="com.oa.core.service.module.EmployeesServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.DepartmentService" ref="departmentService"/>
+	<bean id="departmentService" class="com.oa.core.service.module.DepartmentServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.MessageService" ref="messageService"/>
+	<bean id="messageService" class="com.oa.core.service.module.MessageServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.UpdatePackageService" ref="updatePackageService"/>
+	<bean id="updatePackageService" class="com.oa.core.service.module.UpdatePackageServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.FilepermissionService" ref="filepermissionService"/>
+	<bean id="filepermissionService" class="com.oa.core.service.module.FilepermissionServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.FiletypeService" ref="filetypeService"/>
+	<bean id="filetypeService" class="com.oa.core.service.module.FiletypeServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.FileService" ref="fileService"/>
+	<bean id="fileService" class="com.oa.core.service.module.FileServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.FestivalService" ref="festivalService"/>
+	<bean id="festivalService" class="com.oa.core.service.module.FestivalServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.ScheduleService" ref="scheduleService"/>
+	<bean id="scheduleService" class="com.oa.core.service.module.ScheduleServiceImpl" />
+
+	<dubbo:service interface="com.oa.core.service.module.JoblogService" ref="joblogService"/>
+	<bean id="joblogService" class="com.oa.core.service.module.JoblogServiceImpl" />
+</beans>

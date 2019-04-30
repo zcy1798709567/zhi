@@ -1,0 +1,7 @@
+#jdbc.url=jdbc:mysql://122.14.224.4:3306/oa-data?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+jdbc.url=jdbc:mysql://192.168.1.189:3306/oa_database?characterEncoding=UTF-8&autoReconnect=true&failOverReadOnly=false&allowMultiQueries=true
+jdbc.username=root
+#jdbc.password=123456
+jdbc.password=root
+jdbc.initialSize=1
+jdbc.maxActive=20
